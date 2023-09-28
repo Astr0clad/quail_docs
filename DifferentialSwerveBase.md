@@ -11,7 +11,7 @@ icon: mirror
 differentialSwerveModuleBase(Vec2d position, double steeringRatio, double driveRatio);
 differentialSwerveModuleBase(Vec2d position, double steeringRatio, double driveRatio, boolean optimized);
 ```
-Crazy
+Support for integral swerve modules will come in version 3.0.0
 
 ## Usage
 **ABSTRACT FOR A GOOD REASON FOR ONCE**
@@ -19,4 +19,4 @@ Crazy
 **Suggested Usage:**
 Create a method to set the motor powers/module that takes in a `Vec2d`. This method should use `calculateMotorSpeeds`, some PID magic, normalizing powers to your maximum allowable motor power, and actually setting your motor powers. 
 
-It is highly recommended that you feed your motors and encoders into this class. Absolute encoders are great, but your motor's relative encoders can work if you rub your braincells and do some math. You will need your drive and steering ratios if you decide to go the math route. Using a PID controller for getting the *rotation* speed is recommended, but not required. Getting the wheel speed is just `Vec2d.getLength()`. You should also probably do some form of "wheel flipping" to optimize turns, eg., instead of turning the module 180 degrees, just invert the drive speed. Recommendations, not requirements.
+It is highly recommended that you feed your motors and encoders into this class. Absolute encoders are great, but your motor's relative encoders can work if you rub your braincells and do some math. You will need your drive and steering ratios if you decide to go the math route. Using a PID controller for getting the *rotation* speed is recommended, but not required. Getting the wheel speed is just `Vec2d.getLength()`. You should also probably do some form of "wheel flipping" to optimize turns, eg., instead of turning the module 180 degrees, just invert the drive speed (this is supported in the library). Recommendations, not requirements.
