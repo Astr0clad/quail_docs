@@ -32,5 +32,3 @@ This class represents a swerve drive, insane concept. It is designed to be **inh
 You should be able to skip the last step if using `move()`, it will normalize the vectors for you.
 
 If for some reason you don't want to use `move()`, you can make your life harder and use `calculateMoveAngles` (see javadoc) and then normalize those vectors and pass them into the modules.
-
-**Note that `move()` doesn't actually move the modules, it just calculates the vectors.**
