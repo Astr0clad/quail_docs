@@ -7,7 +7,7 @@ icon: star-fill
 ## Quail
 
 #### This Wiki is a work in progress, pages are missing.
-We might eventually have some proper guides in here, but for now, you'll have to deal with this.
+Proper guides are under construction.
 
 Bird-brained swerve drive utility.
 
