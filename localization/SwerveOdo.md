@@ -4,4 +4,17 @@ order: 0
 icon: issue-draft
 ---
 
-## Coming Soon™
+# Swerve Odometry - A Swerve Drive Odometry Class
+
+### Class Summary
+```java
+swerveOdometry(Vec2d[] moduleVectors)
+swerveOdometry(List<Vec2d> moduleVectors)
+swerveOdometry(swerveDrive drivetrain)
+```
+You should probably give it what it wants. Using the swerveDrive constructor is recommended.
+
+### Usage
+Just do it™ - Nike. Use `calculateOdometry()` and `calculateFastOdometry` with the module vectors (current angle and current velocity). Use this to `updateOdometryDelta()`.
+
+If you want to, you can get module vectors using `extractModuleVectors()` and pass in the `swerveDrive`.
