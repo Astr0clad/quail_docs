@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astr0clad.github.io/quail_docs/sitemap.xml.gz
