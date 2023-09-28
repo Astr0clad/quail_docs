@@ -23,7 +23,7 @@ This class represents a swerve drive, insane concept. It is designed to be **inh
 - Acceleration limiting (while walls are fun to hit, it is not recommended)
 
 **Typical Usage:**
-- Create a list of swerve modules (`differentialSwerveModuleBase` or `swerveModuleBase`)
+- Create a list of swerve modules that inherit from (`differentialSwerveModuleBase` or `swerveModuleBase`)
 - Create a `swerveDrive` object with the list of the swerve modules
 - every time you want to move, call `move()` with your desired movement vector and probably the rotation speed
 - Get the module vectors from the swerve modules and pass them into `swerveOdometry` or just use `TwoWheelLocalizer` if you like deadwheels
@@ -32,3 +32,5 @@ This class represents a swerve drive, insane concept. It is designed to be **inh
 You should be able to skip the last step if using `move()`, it will normalize the vectors for you.
 
 If for some reason you don't want to use `move()`, you can make your life harder and use `calculateMoveAngles` (see javadoc) and then normalize those vectors and pass them into the modules.
+
+**Note that `move()` doesn't actually move the modules, it just calculates the vectors.**
