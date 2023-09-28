@@ -6,7 +6,7 @@ icon: star-fill
 
 ## Quail
 
-#### This Wiki is a work in progress, pages are missing, just like my eggs
+#### This Wiki is a work in progress, pages are missing.
 We might eventually have some proper guides in here, but for now, you'll have to deal with this.
 
 Bird-brained swerve drive utility.
