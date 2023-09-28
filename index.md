@@ -6,8 +6,6 @@ icon: star-fill
 
 ## Quail
 
-![](/static/quail_light.png)
-
 #### This Wiki is a work in progress, pages are missing, just like my eggs
 We might eventually have some proper guides in here, but for now, you'll have to deal with this.
 
