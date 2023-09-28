@@ -8,9 +8,9 @@ branding:
 edit:
   repo: "https://github.com/astr0clad/quail_docs"
 meta:
-  title: " - quail Docs"
+  title: " - quail Documentation"
 links:
-- text: Source
+- text: Quail Source
   link: https://github.com/mineinjava/quail
   icon: mark-github
   target: blank
