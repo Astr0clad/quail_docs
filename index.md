@@ -6,7 +6,7 @@ icon: star-fill
 
 ## Quail
 
-#### This Wiki is a work in progress, pages are missing.
+#### This Wiki is a work in progress, pages are missing, just like my eggs.
 Proper guides are under construction.
 
 Bird-brained swerve drive utility.
@@ -19,3 +19,5 @@ The second thing you need is a little knowledge of Java. You should be able to:
 - make your motors spin
 
 But, most importantly, you need a desire for freedom.
+
+[!ref Get Started](/guides/Installation.md)

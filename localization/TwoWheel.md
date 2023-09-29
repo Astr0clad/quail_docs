@@ -8,10 +8,10 @@ description: Abstract class for two wheel odometry
 # TwoWheelLocalizer - Abstract Class For Two Wheel Odometry
 
 ## Class Details
-```
+```java
 TwoWheelLocalizer(List<Pose2d> wheelPoses>);
 ```
-Where each wheel pose in the List are `quail.util.geometry.Pose2d` objects representing the position of the wheels relative to the center of the robot.
+I could be useful with this message, but that's a lot of work.
 
 ## Usage
 ***ABSTRACT FOP A REASON!***
