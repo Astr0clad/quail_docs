@@ -6,6 +6,11 @@ icon: download
 
 # Installation - It's not that hard
 
+!!!warning Warning:
+Quail is in its alpha stages, some features are not stable and may not work as intended. If you find a bug, please report it on [here](https://github.com/mineinjava/quail/issues).
+!!!
+<br/>
+
 ## Into an Existing Project
 
 +++ 🐘 Gradle

@@ -1,6 +1,6 @@
 ---
 label: Math
-order: 1
+order: -1
 icon: code-square
 ---
 
