@@ -14,11 +14,11 @@ icon: code-square
 - Robot position: the robot's position relative to the field
 
 ## Reverse Kinematics (general)
-From a desired robot movement (Δ position), we can calculate the module states for each module.
+From a desired robot movement (Δ position), we can calculate the module state for each module.
 
 To do so, we begin with the translation component of the desired robot movement, vector *R<sub>G</sub>* (movement of robot relative to the ground).
 
-Translation, each module vector, *m<sub>i</sub>* is equal to the robot's movement relative to the ground (*m<sub>i<sub>G</sub></sub>*) plus the module's movement relative to the robot of rotation (*m<sub>i<sub>R</sub></sub>*).
+For translation, each module state, *m<sub>i</sub>*, is equal to the robot's movement relative to the ground (*m<sub>i<sub>G</sub></sub>*) plus the module's movement relative to the robot of rotation (*m<sub>i<sub>R</sub></sub>*).
 
 *m<sub>i</sub>* = *m<sub>i<sub>G</sub></sub>* + *m<sub>i<sub>R</sub></sub>*
 
@@ -27,6 +27,8 @@ It should then follow that *m<sub>i<sub>R</sub></sub>* can be calculated easily:
 - its magnitude is equal to the robot's rotation speed times the module's distance from the center of rotation
 
 ### Reverse Kinematics (Differential Swerve)
+
+***Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position***
 
 With differential swerve, the module's angular velocity is equal to the sum of the two motor velocities, and the module's linear velocity is equal to the difference of the two motor velocities.
 
@@ -50,4 +52,17 @@ A simple manipulation gives:
 ## Forwards Kinematics (general)
 
 ## Forwards Kinematics (Differential Swerve)
+***Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position***
 
+Knowing the distance that a module has traveled is not very useful. If you find a use for it, it can be calculated in a similar method as follows.
+
+The *angular* distance that a module has traveled--its angle relative to its starting position--*is* useful.
+
+To calculate angular distance, we can begin with the equation for differential swerve module angular velocity:
+- *R<sub>A</sub>* *V<sub>A</sub>* = *V<sub>m1</sub>* + *V<sub>m2</sub>* 
+
+*R<sub>A</sub>* is a constant, so we can integrate both sides with respect to time to get:
+
+- *R<sub>A</sub>* *Δθ<sub>A</sub>* = *Δθ<sub>m1</sub>* + *Δθ<sub>m2</sub>* 
+
+Where *Δθ<sub>A</sub>* is the angular distance that the module has traveled, and *Δθ<sub>m1</sub>* and *Δθ<sub>m2</sub>* are the angular distances that the motors have traveled.
