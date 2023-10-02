@@ -50,6 +50,7 @@ A simple manipulation gives:
 - *V<sub>m2</sub>* = (*R<sub>A</sub>* *V<sub>A</sub>* - *R<sub>L</sub>* *V<sub>L</sub>*) / 2
 
 ## Forwards Kinematics (general)
+coming soon™
 
 ## Forwards Kinematics (Differential Swerve)
 ***Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position***
