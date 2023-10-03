@@ -8,11 +8,14 @@ branding:
 edit:
   repo: "https://github.com/astr0clad/quail_docs"
 meta:
-  title: " - quail Docs"
+  title: " - quail Documentation"
 links:
-- text: Source
+- text: Quail Source
   link: https://github.com/mineinjava/quail
   icon: mark-github
   target: blank
+- text: Javadoc
+  link: https://mineinjava.github.io/quail/javadoc/
+  icon: book
 footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+  copyright: "&copy; Copyright 2023-Present All rights reserved."
