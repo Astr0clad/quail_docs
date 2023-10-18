@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749624795356">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750967592834">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Path - A Set of Points - quail Documentation</title>
     <meta name="title" content="Path - A Set of Points - quail Documentation">
-    <meta name="description" content="If you don't know what a path is, swerve might not be for you">
+    <meta name="description" content="If you don't know what a path is, swerve might not be for you.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://astr0clad.github.io/quail_docs/pathing/path/">
@@ -21,22 +21,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astr0clad.github.io/quail_docs/pathing/path/">
     <meta property="og:title" content="Path - A Set of Points - quail Documentation">
-    <meta property="og:description" content="If you don't know what a path is, swerve might not be for you">
+    <meta property="og:description" content="If you don't know what a path is, swerve might not be for you.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://astr0clad.github.io/quail_docs/pathing/path/">
     <meta property="twitter:title" content="Path - A Set of Points - quail Documentation">
-    <meta property="twitter:description" content="If you don't know what a path is, swerve might not be for you">
+    <meta property="twitter:description" content="If you don't know what a path is, swerve might not be for you.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.749624795356" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.750967592834" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.749624795356" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.749624795356" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.749624795356" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.750967592834" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -215,18 +215,19 @@
     </h2>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-java"><code v-pre class="language-java">path(ArrayList&lt;double[]&gt; points)</code></pre>
+<pre class="language-java"><code v-pre class="language-java">path(ArrayList&lt;double[]&gt; points, double finalHeading)</code></pre>
 </doc-codeblock></div>
-<p>If you don&#x27;t know what a path is, swerve might not be for you</p>
+<p>If you don&#x27;t know what a path is, swerve might not be for you.</p>
 <doc-anchor-target id="usage">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
         <span>Usage</span>
     </h2>
 </doc-anchor-target>
-<p>You make an ArrayList of points (double[]), and you give it to the class. It represents those. Have fun :D</p>
-<p>Oh, you can cycle through the points using a few things, like <code v-pre>getCurrentPoint()</code>, <code v-pre>getNextPoint()</code>, and <code v-pre>getPointRelativeToCurrent()</code>.</p>
-<p>We were nice and added some nearest point utils, <code v-pre>nearestPointIndex()</code> and <code v-pre>nearestPoint()</code>, pretty cool, huh?</p>
+<p>You make an ArrayList&lt;double[]&gt;, and you pass it into the class. It represents the points that the robot will pass through, in the form [[<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>], [<em>x</em><sub>2</sub>, <em>y</em><sub>2</sub>], ... [<em>x</em><sub><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 11.16c.887-.933 1.813-1.865 2.78-2.6C15.952 7.668 17.267 7 18.75 7 21.657 7 24 9.615 24 12.25s-2.343 5.25-5.25 5.25c-1.483 0-2.798-.668-3.97-1.56-.967-.735-1.893-1.667-2.78-2.6-.887.933-1.813 1.865-2.78 2.6-1.172.892-2.487 1.56-3.97 1.56C2.343 17.5 0 14.885 0 12.25S2.343 7 5.25 7c1.483 0 2.798.667 3.97 1.56.967.735 1.893 1.667 2.78 2.6ZM5.25 8.5c-2.032 0-3.75 1.895-3.75 3.75S3.218 16 5.25 16c1.017 0 2.014-.457 3.062-1.253.89-.678 1.758-1.554 2.655-2.497-.897-.943-1.765-1.82-2.655-2.497C7.264 8.957 6.267 8.5 5.25 8.5Zm7.783 3.75c.897.943 1.765 1.82 2.655 2.497C16.736 15.543 17.733 16 18.75 16c2.032 0 3.75-1.895 3.75-3.75S20.782 8.5 18.75 8.5c-1.017 0-2.014.457-3.062 1.253-.89.678-1.758 1.554-2.655 2.497Z"/></g></g></svg></sub>, <em>y</em><sub><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 11.16c.887-.933 1.813-1.865 2.78-2.6C15.952 7.668 17.267 7 18.75 7 21.657 7 24 9.615 24 12.25s-2.343 5.25-5.25 5.25c-1.483 0-2.798-.668-3.97-1.56-.967-.735-1.893-1.667-2.78-2.6-.887.933-1.813 1.865-2.78 2.6-1.172.892-2.487 1.56-3.97 1.56C2.343 17.5 0 14.885 0 12.25S2.343 7 5.25 7c1.483 0 2.798.667 3.97 1.56.967.735 1.893 1.667 2.78 2.6ZM5.25 8.5c-2.032 0-3.75 1.895-3.75 3.75S3.218 16 5.25 16c1.017 0 2.014-.457 3.062-1.253.89-.678 1.758-1.554 2.655-2.497-.897-.943-1.765-1.82-2.655-2.497C7.264 8.957 6.267 8.5 5.25 8.5Zm7.783 3.75c.897.943 1.765 1.82 2.655 2.497C16.736 15.543 17.733 16 18.75 16c2.032 0 3.75-1.895 3.75-3.75S20.782 8.5 18.75 8.5c-1.017 0-2.014.457-3.062 1.253-.89.678-1.758 1.554-2.655 2.497Z"/></g></g></svg></sub>]]. Have fun :D</p>
+<p>FinalHeading is now <strong>required</strong>. Just pass in the current gyro angle if you don&#x27;t want the robot to rotate. It&#x27;s also in radians because I&#x27;m not a monster.</p>
+<p>You can cycle through the points using a few things, like <code v-pre>getCurrentPoint()</code>, <code v-pre>getNextPoint()</code>, and <code v-pre>getPointRelativeToCurrent()</code>.</p>
+<p>Because some users had difficulty with these, we added some builtin nearest point utils: <code v-pre>nearestPointIndex()</code> and <code v-pre>nearestPoint()</code>, pretty cool, huh?</p>
 
                                 
                                 <!-- Required only on API pages -->

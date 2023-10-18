@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749624795356">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750967592834">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.749624795356" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.750967592834" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.749624795356" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.749624795356" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.749624795356" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.750967592834" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -225,7 +225,7 @@
     </h2>
 </doc-anchor-target>
 <p>This one is simple for once. Give the class what it needs. Make sure you aren&#x27;t trying to turn right at 999deg/s unless your drivetrain supports it. PID is also really cool, it allows you to actually turn accurately, you should tune that. Precision is kinda important, decide how precise you want to be :D</p>
-<p>To set a new path, use <code v-pre>setPath()</code>. You can calculate the next movement each loop using <code v-pre>calculateNextDriveMovement()</code>, it returns a robotMovement that you can feed into <code v-pre>swerveDrive.move()</code>. We do try to make your life easier sometimes. You could also go off the rails and do something else with it if you want, but that&#x27;s not recommended. The method also deals with getting the pose from your localizer of choice, so that&#x27;s nice.</p>
+<p>To set a new path, use <code v-pre>setPath()</code>. You can calculate the next movement each loop cycle using <code v-pre>calculateNextDriveMovement()</code>, it returns a robotMovement that you can feed into <code v-pre>swerveDrive.move()</code>. The path is (hopefully) completed when the <code v-pre>isFinished()</code> method returns true. We do try to make your life easier sometimes. You could also go off the rails and do something else with it if you want, but that&#x27;s not recommended. The method also deals with getting the pose from your localizer of choice, so that&#x27;s nice.</p>
 
                                 
                                 <!-- Required only on API pages -->
