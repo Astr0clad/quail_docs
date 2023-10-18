@@ -50,6 +50,10 @@ A simple manipulation gives:
 - *V<sub>m2</sub>* = (*R<sub>A</sub>* *V<sub>A</sub>* - *R<sub>L</sub>* *V<sub>L</sub>*) / 2
 
 ## Forwards Kinematics (general)
+Good luck.
+
+
+
 coming soon™
 
 ## Forwards Kinematics (Differential Swerve)
@@ -64,6 +68,8 @@ To calculate angular distance, we can begin with the equation for differential s
 
 *R<sub>A</sub>* is a constant, so we can integrate both sides with respect to time to get:
 
-- *R<sub>A</sub>* *Δθ<sub>A</sub>* = *Δθ<sub>m1</sub>* + *Δθ<sub>m2</sub>* 
+- *R<sub>A</sub>* *θ<sub>A</sub>* = *θ<sub>m1</sub>* + *θ<sub>m2</sub>* + *C*
 
-Where *Δθ<sub>A</sub>* is the angular distance that the module has traveled, and *Δθ<sub>m1</sub>* and *Δθ<sub>m2</sub>* are the angular distances that the motors have traveled.
+Where *Δ<sub>A</sub>* is the angule of the module, *θ<sub>m1</sub>* and *θ<sub>m2</sub>* are the angles of the motors, and C is the initial position of the module.
+
+This calculation is usually not as precise as using an absolute encoder (due to backlash) but is generally good enough.
