@@ -10,7 +10,7 @@ icon: list-ordered
 ```java
 PathSequenceFollower(PathFollower pathFollower);
 ```
-Neat
+Neat, huh?
 
 ## Usage
 This class strings together a mix of paths and "markers". These two things are consdered "segments". Think of markers as a point where an action should occur. Currently they are synchronous only, meaning the robot will wait until the previous segment has completed before running the next segment. If you can't understand that, then you shuoldn't be using this class.
@@ -25,6 +25,12 @@ It is important to understand what these do.
 - Using `.addPath()` will add the specified path to the sequence. 
 - Using `.addDisplacementMarker()` run the specified action when the marker is reached.
 - Using `.addLocalTemporalMarker()` will run the specified action after the specified time has passed since the start of THIS segment (since the end of the previous segment).
+
+You should string these methods together, eg:
+```java
+PathSequenceFollower.addPath(path1).addDisplacementMarker(action1).addPath(path2).addLocalTemporalMarker(1.0, action2).addPath(path3);
+```
+Don't forget about lambda expressions (() -> {}) for runnables, they make your life so much easier.
 
 #### **DO NOT RUN BLOCKING METHODS IN MARKERS**.
 ###### When using markers, it is super important to not use `sleep()` or any other blocking methods, it will pause everything under the sun.
