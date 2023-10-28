@@ -8,14 +8,14 @@ icon: milestone
 
 ## Class Summary
 ```java
-path(ArrayList<double[]> points, double finalHeading)
+path(ArrayList<Pose2d> points)
 ```
 If you don't know what a path is, swerve might not be for you.
 
 ## Usage
-You make an ArrayList<double[]>, and you pass it into the class. It represents the points that the robot will pass through, in the form [[_x_<sub>1</sub>, _y_<sub>1</sub>], [_x_<sub>2</sub>, _y_<sub>2</sub>], ... [_x_<sub>:icon-infinity:</sub>, _y_<sub>:icon-infinity:</sub>]]. Have fun :D
+You make an ArrayList<Pose2d>, and you pass it into the class. It represents the points that the robot will pass through. If you don't like Pose2d and prefer to use lists for some reason, `Pose2d.fromList(double[])` exists. It takes 3 doubles: x, y, and theta.  Have fun :D
 
-FinalHeading is now **required**. Just pass in the current gyro angle if you don't want the robot to rotate. It's also in radians because I'm not a monster.
+Just pass the current gyro angle into the `Pose2d`s if you don't want the robot to rotate. It's also in radians because I'm not a monster.
 
 You can cycle through the points using a few things, like `getCurrentPoint()`, `getNextPoint()`, and `getPointRelativeToCurrent()`.
 
