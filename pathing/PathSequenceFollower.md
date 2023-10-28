@@ -30,7 +30,7 @@ You should string these methods together, eg:
 ```java
 PathSequenceFollower.addPath(path1).addDisplacementMarker(action1).addPath(path2).addLocalTemporalMarker(1.0, action2).addPath(path3);
 ```
-Don't forget about lambda expressions (() -> {}) for runnables, they make your life so much easier.
+Don't forget about lambda expressions (if you don't know what they are, google it) for runnables, they make your life so much easier.
 
 #### **DO NOT RUN BLOCKING METHODS IN MARKERS**.
 ###### When using markers, it is super important to not use `sleep()` or any other blocking methods, it will pause everything under the sun.
