@@ -8,7 +8,7 @@ icon: milestone
 
 ## Class Summary
 ```java
-path(ArrayList<Pose2d> points)
+Path(ArrayList<Pose2d> points)
 ```
 If you don't know what a path is, swerve might not be for you.
 
