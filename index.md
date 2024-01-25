@@ -6,9 +6,6 @@ icon: star-fill
 
 ## Quail
 
-#### This Wiki is a work in progress, pages are missing, just like my eggs.
-Proper guides are under construction.
-
 Bird-brained swerve drive utility.
 
 To use quail, you need a few things. The first is swerve modules. I don't care where your swerve modules are. They could be 52 miles apart and in the shape of a pentagon and quail would still work.
