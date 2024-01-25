@@ -8,7 +8,9 @@ icon: goal
 
 ## Class Summary
 ```java
-SwerveModuleBase(Localizer localizer, path path, double speed, double maxTurnSpeed, double maxTurnAcceleration, double maxAcceleration, MiniPID turnController, double precision);
+PathFollower(Localizer localizer, Path path, double speed, double maxTurnSpeed, double maxTurnAcceleration, double maxAcceleration, MiniPID turnController, double precision);
+
+PathFollower(Localizer localizer, double speed, double maxTurnSpeed, double maxTurnAcceleration double maxAcceleration, MiniPID turnController, double precision);
 ```
 Self explanatory
 
