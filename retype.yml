@@ -4,7 +4,7 @@ url: astr0clad.github.io/quail_docs/
 branding:
   logo: static/quail_light.png
   logoDark: static/quail_dark.png
-  label: alpha
+  label: 1.0.0-RC1
 edit:
   repo: "https://github.com/astr0clad/quail_docs"
 meta:
