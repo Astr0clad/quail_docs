@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750967592834">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759474143503">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.750967592834" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.759474143503" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759474143503" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.750967592834" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.750967592834" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759474143503" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759474143503" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -225,7 +225,7 @@ SwerveModuleBase(Vec2d position, double steeringRatio, double driveRatio, boolea
         <span>Usage</span>
     </h2>
 </doc-anchor-target>
-<p>The base of everything quail (almost).</p>
+<p>The base of everything quail (almost). Represents a swerve module (coaxial, or can be extended to non-coaxial).</p>
 <p>This class is designed to be inherited from. You need to override the <code v-pre>setAngle()</code> and <code v-pre>setRawSpeed</code> methods to set the module&#x27;s angle and wheel velocity, respectively. You could also probably include a method to reset your module position (preferably using absolute encoders geared 1:1 with the module heading).</p>
 <p>Make sure that you&#x27;re accounting for your gear ratios. It is recommended that you configure <code v-pre>swerveDrive</code> call <code v-pre>set()</code> on all of your modules.</p>
 
