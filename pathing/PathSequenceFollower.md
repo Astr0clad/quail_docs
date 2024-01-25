@@ -5,7 +5,7 @@ icon: list-ordered
 ---
 
 # PathSequenceFollower - Following Sequences of Paths
-
+## Deprecated - Coming Soon™
 ## Class Summary
 ```java
 PathSequenceFollower(PathFollower pathFollower);
