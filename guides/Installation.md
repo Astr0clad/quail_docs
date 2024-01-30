@@ -19,7 +19,7 @@ repositories {
 2. Add the dependency
 ```gradle
 dependencies {
-    implementation 'com.github.mineinjava:quail:v0.2.1-a'
+    implementation 'com.github.mineinjava:quail:v1.0.0-RC-1'
 }
 ```
 
