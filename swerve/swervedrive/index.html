@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759903582174">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761798220762">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,12 +31,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.759903582174" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.761798220762" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.759903582174" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.759903582174" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.759903582174" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.761798220762" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -228,7 +228,7 @@
 <p>Obviously, this class represents a swerve drive. It is designed to be <strong>inherited from</strong>, it will <em>technically</em> when not inherited from, but it is not recommended.</p>
 <p><strong>You might want a few methods:</strong></p>
 <ul>
-<li>Reset gyro, both from controller and potentially vision (not recommended)</li>
+<li>Reset gyro, both from controller and potentially vision</li>
 <li>Reset module positions (absolute encoders are amazing)</li>
 <li>Acceleration limiting (while walls are fun to hit, it is not recommended. May come soon to quail)</li>
 </ul>
@@ -239,7 +239,6 @@
 <li>every time you want to move, call <code v-pre>move()</code> with your desired movement vector and rotation speed</li>
 <li>Get the module vectors from the swerve module sensors and pass them into <code v-pre>swerveOdometry</code> or just use <code v-pre>TwoWheelLocalizer</code> if you like deadwheels</li>
 </ul>
-<p>You should be able to skip the last step if using <code v-pre>move()</code>, it will normalize the vectors for you.</p>
 <p>If for some reason you don&#x27;t want to use <code v-pre>move()</code>, you can make your life harder and use <code v-pre>calculateMoveAngles</code> (see javadoc) and then normalize those vectors and pass them into the modules.</p>
 
                                 
