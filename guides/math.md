@@ -6,6 +6,8 @@ icon: code-square
 
 # Math
 
+Explanations for how the math works.
+
 ## Terminology:
 - Forwards kinematics: determining the robot's position based on the module angles and speeds
 - Reverse kinematics: determining the module angles and speeds based on a desired robot movement
@@ -13,7 +15,7 @@ icon: code-square
 - Module position: the module's position relative to the robot's center of rotation
 - Robot position: the robot's position relative to the field
 
-## Reverse Kinematics (general)
+## Reverse Kinematics (drivetrain)
 From a desired robot movement (Δ position), we can calculate the module state for each module.
 
 To do so, we begin with the translation component of the desired robot movement, vector *R<sub>G</sub>* (movement of robot relative to the ground).
@@ -26,7 +28,7 @@ It should then follow that *m<sub>i<sub>R</sub></sub>* can be calculated easily:
 - its angle must be perpendicular to the module's position vector
 - its magnitude is equal to the robot's rotation speed times the module's distance from the center of rotation
 
-### Reverse Kinematics (Differential Swerve)
+### Reverse Kinematics (differential swerve)
 
 ***Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position***
 
@@ -49,14 +51,27 @@ A simple manipulation gives:
 - *V<sub>m1</sub>* = (*R<sub>A</sub>* *V<sub>A</sub>* + *R<sub>L</sub>* *V<sub>L</sub>*) / 2
 - *V<sub>m2</sub>* = (*R<sub>A</sub>* *V<sub>A</sub>* - *R<sub>L</sub>* *V<sub>L</sub>*) / 2
 
-## Forwards Kinematics (general)
-Good luck.
+## Forwards Kinematics (drivetrain)
+This method involves taking velocity vectors from each module, and combining that information with the module positions to obtain the robot velocity, which can then be integrated to find a delta position.
 
+### The fast way
+If your modules are in a shape such that their average position is the center of the robot, then you can use this method.
 
+"average modules position in center of robot" means one of the following:
+ - your modules are in a geometric regular shape (square, regular pentagon, equilateral triangle, straight line with robot center bisecting it)
+ - the sum of the module position vectors is zero (rectangle and some other shapes meet this requirement)
+
+Because the rotation vector of each module will cancel out, the robot
+velocity will be equal to the average of the module velocities.
+
+### The slow (but more flexible) way
+What happens if your modules do not meet the above requirements?
+This code has been implemented into quail, but the math behind it is
+rather complex.
 
 coming soon™
 
-## Forwards Kinematics (Differential Swerve)
+## Forwards Kinematics (sifferential swerve per-module)
 ***Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position***
 
 Knowing the distance that a module has traveled is not very useful. If you find a use for it, it can be calculated in a similar method as follows.
