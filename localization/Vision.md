@@ -41,16 +41,23 @@ At any given time/tick ($t$) we are trying to estimate our position, we do this 
 
 $$
 P_k(t) = P_k(t-1) + v(t) \\
+$$
+
+$$
 P_v(t) = \hat P + \int_{t-\dot t}^t v(t)dt \\
+$$
+
+$$
 \hat P (t) = \frac{wP_v(t) + (1-w)P_k(t)}{2}
 $$
 
-<aside>
-💡 Note that because we cannot do an actual integral in our periodic function, we will keep a  buffer of the last n velocity values and take the sum of those when calculating the position from the limelight.
+!!!
 
-n in this case is the maximum number of ticks between limelight updates
+💡 Note that because we cannot do an actual integral in our periodic function, we will keep a buffer of the last n velocity values and take the sum of those when calculating the position from the limelight.
 
-</aside>
+In in this case is the maximum number of ticks between limelight updates
+
+!!!
 
 ### Pseudocode
 
