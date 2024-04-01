@@ -44,7 +44,13 @@ At any given time/tick ($t$) we are trying to estimate our position, we do this 
 
 $$
 P_k(t) = P_k(t-1) + v(t) \\
+$$
+
+$$
 P_v(t) = \hat P + \int_{t-\dot t}^t v(t)dt \\
+$$
+
+$$
 \hat P (t) = \frac{wP_v(t) + (1-w)P_k(t)}{2}
 $$
 
