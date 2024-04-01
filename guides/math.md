@@ -34,7 +34,9 @@ It should then follow that _m<sub>i<sub>R</sub></sub>_ can be calculated easily:
 
 ### Reverse Kinematics (differential swerve)
 
-**_Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position_**
+!!!secondary
+Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position
+!!!
 
 With differential swerve, the module's angular velocity is equal to the sum of the two motor velocities, and the module's linear velocity is equal to the difference of the two motor velocities.
 
@@ -81,7 +83,9 @@ coming soon™
 
 ## Forwards Kinematics (sifferential swerve per-module)
 
-**_Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position_**
+!!!secondary
+Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position
+!!!
 
 Knowing the distance that a module has traveled is not very useful. If you find a use for it, it can be calculated in a similar method as follows.
 
