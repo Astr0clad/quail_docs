@@ -4,7 +4,7 @@ order: 0
 icon: download
 ---
 
-# Installation - It's not that hard
+# Installation
 
 ## Via Jitpack
 
@@ -79,6 +79,12 @@ On Windows:
 ```
 
 - This will create a symlink to the Quail module in your project.
+
+To update the module:
+```bash
+ cd repositories/quail
+ git pull
+```
 
 ## FTC Quickstart
 
