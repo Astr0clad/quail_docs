@@ -5,7 +5,7 @@ icon: device-camera-video
 ---
 # Vision
 
-For help with vision, quail provides a Kalman filter, implemented as a mostly drop-in replacement for the other `Localizer` classes.
+For help with vision, Quail provides a Kalman filter, implemented as a mostly drop-in replacement for the other `Localizer` classes.
 
 ## Background
 
@@ -17,7 +17,10 @@ The Kalman Filter is particularly useful in situations where the robot's environ
 
 First, one must create a `KalmanFilterLocalizer` with the robot starting
 position and robot looptime (50ms default for FTC, 20ms default in FRC)
-- Note that the initial position does not matter if the vision reports a position on startup
+
+!!!primary
+The initial position does not matter if the vision reports a position on startup
+!!!
 
 After the localizer has been created, simply call the
 KalmanFilterLocalizer.update() with the vision pose, the field-relative
@@ -45,12 +48,11 @@ P_v(t) = \hat P + \int_{t-\dot t}^t v(t)dt \\
 \hat P (t) = \frac{wP_v(t) + (1-w)P_k(t)}{2}
 $$
 
-<aside>
-💡 Note that because we cannot do an actual integral in our periodic function, we will keep a  buffer of the last n velocity values and take the sum of those when calculating the position from the limelight.
+!!!primary
+Because we cannot do an actual integral in our periodic function, we will keep a  buffer of the last n velocity values and take the sum of those when calculating the position from the limelight.
 
-n in this case is the maximum number of ticks between limelight updates
-
-</aside>
+In in this case is the maximum number of ticks between limelight updates
+!!!
 
 ### Pseudocode
 

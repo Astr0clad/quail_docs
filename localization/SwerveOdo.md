@@ -43,5 +43,6 @@ void loop() {
     odometry.upddateDelta(newVelocity);
 }
 ```
-
+!!!warning
 `calculateFastOdometry()` only works if your modules are in a regular geometric shape. If they are, it is much faster than `calculateOdometry()`.
+!!!
