@@ -14,7 +14,7 @@ swerveOdometry(List<Vec2d> moduleVectors)
 swerveOdometry(swerveDrive drivetrain)
 ```
 
-Instntiate a new `swerveOdometry` object with the module positions of your swerve drive. You can also pass in a `swerveDrive` object to get the position vectors from that.
+Instantiate a new `swerveOdometry` object with the module positions of your swerve drive. You can also pass in a `swerveDrive` object to get the position vectors from that.
 
 ### Usage
 

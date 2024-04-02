@@ -84,7 +84,7 @@ coming soon™
 ## Forwards Kinematics (sifferential swerve per-module)
 
 !!!secondary
-Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its veocity and position
+Please note that in some differential swerve setups one motor's rotation is reversed, which will require inversion of its velocity and position
 !!!
 
 Knowing the distance that a module has traveled is not very useful. If you find a use for it, it can be calculated in a similar method as follows.
