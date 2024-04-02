@@ -12,6 +12,10 @@ PathSequenceFollower(PathFollower pathFollower);
 ```
 Neat, huh?
 
+!!!danger
+DO NOT USE - THIS FILE DESCRIBES FEATURES NOT YET WORKING
+!!!
+
 ## Usage
 This class strings together a mix of paths and "markers". These two things are consdered "segments". Think of markers as a point where an action should occur. Currently they are synchronous only, meaning the robot will wait until the previous segment has completed before running the next segment. If you can't understand that, then you shuoldn't be using this class.
 
