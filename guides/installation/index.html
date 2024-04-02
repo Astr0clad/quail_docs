@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761798220762">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765408440921">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Installation - It&#39;s not that hard - quail Documentation</title>
-    <meta name="title" content="Installation - It's not that hard - quail Documentation">
+    <title>Installation - quail Documentation</title>
+    <meta name="title" content="Installation - quail Documentation">
     <meta name="description" content="Add JitPack to your build file">
 
     <!-- Canonical -->
@@ -20,23 +20,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astr0clad.github.io/quail_docs/guides/installation/">
-    <meta property="og:title" content="Installation - It's not that hard - quail Documentation">
+    <meta property="og:title" content="Installation - quail Documentation">
     <meta property="og:description" content="Add JitPack to your build file">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://astr0clad.github.io/quail_docs/guides/installation/">
-    <meta property="twitter:title" content="Installation - It's not that hard - quail Documentation">
+    <meta property="twitter:title" content="Installation - quail Documentation">
     <meta property="twitter:description" content="Add JitPack to your build file">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.761798220762" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765408440921" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.761798220762" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765408440921" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -202,17 +202,23 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="installation---its-not-that-hard" class="break-words">
+<doc-anchor-target id="installation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installation---its-not-that-hard">#</doc-anchor-trigger>
-        <span>Installation - It&#x27;s not that hard</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
+        <span>Installation</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="into-an-existing-project">
+<doc-anchor-target id="via-jitpack">
     <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#via-jitpack">#</doc-anchor-trigger>
+        <span>Via Jitpack</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="into-an-existing-project">
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#into-an-existing-project">#</doc-anchor-trigger>
         <span>Into an Existing Project</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <doc-tabs>
 <doc-tab v-cloak id="gradle">
@@ -265,6 +271,33 @@
 </doc-tab>
 </doc-tabs>
 <hr/>
+## Via git submodule
+This is recommended teams that wish to contribute to Quail, or if the methods above don't work for you.
+<ol>
+<li>Add the submodule</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">git submodule add https://github.com/Mineinjava/quail.git repositories/quail</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>This will clone a copy of Quail into your project at <code v-pre>repositories/quail</code>.</li>
+</ul>
+<ol start="2">
+<li>Symlink the Quail module into your project</li>
+</ol>
+<p>On Windows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-batch"><code v-pre class="language-batch"> cd src\main\java\com\mineinjava
+ mklink /D quail ..\..\repositories\quail\quail\src\main\java\com\mineinjava\quail</code></pre>
+</doc-codeblock></div>
+<ul>
+<li>This will create a symlink to the Quail module in your project.</li>
+</ul>
+<p>To update the module:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash"> cd repositories/quail
+ git pull</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="ftc-quickstart">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ftc-quickstart">#</doc-anchor-trigger>

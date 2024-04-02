@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761798220762">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765408440921">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Math - quail Documentation</title>
     <meta name="title" content="Math - quail Documentation">
-    <meta name="description" content="Forwards kinematics: determining the robot's position based on the module angles and speeds">
+    <meta name="description" content="Explanations for how the math works. You don't need to know this to use the library, but it might help you understand what's going on.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://astr0clad.github.io/quail_docs/guides/math/">
@@ -21,21 +21,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astr0clad.github.io/quail_docs/guides/math/">
     <meta property="og:title" content="Math - quail Documentation">
-    <meta property="og:description" content="Forwards kinematics: determining the robot's position based on the module angles and speeds">
+    <meta property="og:description" content="Explanations for how the math works. You don't need to know this to use the library, but it might help you understand what's going on.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://astr0clad.github.io/quail_docs/guides/math/">
     <meta property="twitter:title" content="Math - quail Documentation">
-    <meta property="twitter:description" content="Forwards kinematics: determining the robot's position based on the module angles and speeds">
+    <meta property="twitter:description" content="Explanations for how the math works. You don't need to know this to use the library, but it might help you understand what's going on.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.761798220762" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765408440921" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,6 +207,8 @@
         <span>Math</span>
     </h1>
 </doc-anchor-target>
+<p>Explanations for how the math works.
+You don&#x27;t need to know this to use the library, but it might help you understand what&#x27;s going on.</p>
 <doc-anchor-target id="terminology">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
@@ -220,10 +222,10 @@
 <li>Module position: the module&#x27;s position relative to the robot&#x27;s center of rotation</li>
 <li>Robot position: the robot&#x27;s position relative to the field</li>
 </ul>
-<doc-anchor-target id="reverse-kinematics-general">
+<doc-anchor-target id="reverse-kinematics-drivetrain">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reverse-kinematics-general">#</doc-anchor-trigger>
-        <span>Reverse Kinematics (general)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reverse-kinematics-drivetrain">#</doc-anchor-trigger>
+        <span>Reverse Kinematics (drivetrain)</span>
     </h2>
 </doc-anchor-target>
 <p>From a desired robot movement (Δ position), we can calculate the module state for each module.</p>
@@ -238,10 +240,26 @@
 <doc-anchor-target id="reverse-kinematics-differential-swerve">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#reverse-kinematics-differential-swerve">#</doc-anchor-trigger>
-        <span>Reverse Kinematics (Differential Swerve)</span>
+        <span>Reverse Kinematics (differential swerve)</span>
     </h3>
 </doc-anchor-target>
-<p><em><strong>Please note that in some differential swerve setups one motor&#x27;s rotation is reversed, which will require inversion of its veocity and position</strong></em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Please note that in some differential swerve setups one motor&#x27;s rotation is reversed, which will require inversion of its veocity and position</p>
+        </div>
+    </div>
+</div>
 <p>With differential swerve, the module&#x27;s angular velocity is equal to the sum of the two motor velocities, and the module&#x27;s linear velocity is equal to the difference of the two motor velocities.</p>
 <ul>
 <li><p><em>V<sub>A</sub></em> = <em>V<sub>m1</sub></em> + <em>V<sub>m2</sub></em></p>
@@ -262,21 +280,60 @@
 <li><em>V<sub>m1</sub></em> = (<em>R<sub>A</sub></em> <em>V<sub>A</sub></em> + <em>R<sub>L</sub></em> <em>V<sub>L</sub></em>) / 2</li>
 <li><em>V<sub>m2</sub></em> = (<em>R<sub>A</sub></em> <em>V<sub>A</sub></em> - <em>R<sub>L</sub></em> <em>V<sub>L</sub></em>) / 2</li>
 </ul>
-<doc-anchor-target id="forwards-kinematics-general">
+<doc-anchor-target id="forwards-kinematics-drivetrain">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#forwards-kinematics-general">#</doc-anchor-trigger>
-        <span>Forwards Kinematics (general)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#forwards-kinematics-drivetrain">#</doc-anchor-trigger>
+        <span>Forwards Kinematics (drivetrain)</span>
     </h2>
 </doc-anchor-target>
-<p>Good luck.</p>
+<p>This method involves taking velocity vectors from each module, and combining that information with the module positions to obtain the robot velocity, which can then be integrated to find a delta position.</p>
+<doc-anchor-target id="the-fast-way">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-fast-way">#</doc-anchor-trigger>
+        <span>The fast way</span>
+    </h3>
+</doc-anchor-target>
+<p>If your modules are in a shape such that their average position is the center of the robot, then you can use this method.</p>
+<p>&quot;average modules position in center of robot&quot; means one of the following:</p>
+<ul>
+<li>your modules are in a geometric regular shape (square, regular pentagon, equilateral triangle, straight line with robot center bisecting it)</li>
+<li>the sum of the module position vectors is zero (rectangle and some other shapes meet this requirement)</li>
+</ul>
+<p>Because the rotation vector of each module will cancel out, the robot
+velocity will be equal to the average of the module velocities.</p>
+<doc-anchor-target id="the-slow-but-more-flexible-way">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-slow-but-more-flexible-way">#</doc-anchor-trigger>
+        <span>The slow (but more flexible) way</span>
+    </h3>
+</doc-anchor-target>
+<p>What happens if your modules do not meet the above requirements?
+This code has been implemented into quail, but the math behind it is
+rather complex.</p>
 <p>coming soon™</p>
-<doc-anchor-target id="forwards-kinematics-differential-swerve">
+<doc-anchor-target id="forwards-kinematics-sifferential-swerve-per-module">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#forwards-kinematics-differential-swerve">#</doc-anchor-trigger>
-        <span>Forwards Kinematics (Differential Swerve)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#forwards-kinematics-sifferential-swerve-per-module">#</doc-anchor-trigger>
+        <span>Forwards Kinematics (sifferential swerve per-module)</span>
     </h2>
 </doc-anchor-target>
-<p><em><strong>Please note that in some differential swerve setups one motor&#x27;s rotation is reversed, which will require inversion of its veocity and position</strong></em></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-500 dark:bg-dark-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-500 dark:text-dark-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Please note that in some differential swerve setups one motor&#x27;s rotation is reversed, which will require inversion of its velocity and position</p>
+        </div>
+    </div>
+</div>
 <p>Knowing the distance that a module has traveled is not very useful. If you find a use for it, it can be calculated in a similar method as follows.</p>
 <p>The <em>angular</em> distance that a module has traveled--its angle relative to its starting position--<em>is</em> useful.</p>
 <p>To calculate angular distance, we can begin with the equation for differential swerve module angular velocity:</p>

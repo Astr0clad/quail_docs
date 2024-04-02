@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/quail_docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.761798220762">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765408440921">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Swerve Drive - Class For Your Swerve Drive - quail Documentation</title>
     <meta name="title" content="Swerve Drive - Class For Your Swerve Drive - quail Documentation">
-    <meta name="description" content="Where swerveModules is a list of swerve modules. Crazy, right?">
+    <meta name="description" content="This class represents a swerve drive. It is designed to be inherited from; it will technically work when not inherited from, but it is not recommended.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://astr0clad.github.io/quail_docs/swerve/swervedrive/">
@@ -21,22 +21,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://astr0clad.github.io/quail_docs/swerve/swervedrive/">
     <meta property="og:title" content="Swerve Drive - Class For Your Swerve Drive - quail Documentation">
-    <meta property="og:description" content="Where swerveModules is a list of swerve modules. Crazy, right?">
+    <meta property="og:description" content="This class represents a swerve drive. It is designed to be inherited from; it will technically work when not inherited from, but it is not recommended.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://astr0clad.github.io/quail_docs/swerve/swervedrive/">
     <meta property="twitter:title" content="Swerve Drive - Class For Your Swerve Drive - quail Documentation">
-    <meta property="twitter:description" content="Where swerveModules is a list of swerve modules. Crazy, right?">
+    <meta property="twitter:description" content="This class represents a swerve drive. It is designed to be inherited from; it will technically work when not inherited from, but it is not recommended.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.761798220762" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765408440921" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.761798220762" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.761798220762" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765408440921" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765408440921" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -217,15 +217,13 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-java"><code v-pre class="language-java">SwerveDrive(List&lt;T&gt; swerveModules);</code></pre>
 </doc-codeblock></div>
-<p>Where swerveModules is a list of swerve modules. Crazy, right?</p>
 <doc-anchor-target id="usage">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
         <span>Usage</span>
     </h2>
 </doc-anchor-target>
-<p><strong>This one is fun</strong></p>
-<p>Obviously, this class represents a swerve drive. It is designed to be <strong>inherited from</strong>, it will <em>technically</em> when not inherited from, but it is not recommended.</p>
+<p>This class represents a swerve drive. It is designed to be <strong>inherited from</strong>; it will <em>technically</em> work when not inherited from, but it is not recommended.</p>
 <p><strong>You might want a few methods:</strong></p>
 <ul>
 <li>Reset gyro, both from controller and potentially vision</li>
@@ -239,7 +237,7 @@
 <li>every time you want to move, call <code v-pre>move()</code> with your desired movement vector and rotation speed</li>
 <li>Get the module vectors from the swerve module sensors and pass them into <code v-pre>swerveOdometry</code> or just use <code v-pre>TwoWheelLocalizer</code> if you like deadwheels</li>
 </ul>
-<p>If for some reason you don&#x27;t want to use <code v-pre>move()</code>, you can make your life harder and use <code v-pre>calculateMoveAngles</code> (see javadoc) and then normalize those vectors and pass them into the modules.</p>
+<p>If for some reason you don&#x27;t want to use <code v-pre>move()</code>, you can use <code v-pre>calculateMoveAngles</code> (see javadoc) and then normalize those vectors and pass them into the modules.</p>
 
                                 
                                 <!-- Required only on API pages -->
