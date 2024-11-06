@@ -75,8 +75,10 @@ On Windows:
 
 ```cmd
  cd src\main\java\com\mineinjava
- mklink /D quail ..\..\repositories\quail\quail\src\main\java\com\mineinjava\quail
+ mklink /D quail ..\..\..\..\..\repositories\quail\quail\src\main\java\com\mineinjava\quail
 ```
+
+You may have to make directories.
 
 - This will create a symlink to the Quail module in your project.
 
