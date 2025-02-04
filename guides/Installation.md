@@ -57,7 +57,7 @@ Figure it out yourself
 [Here is the jitpack link](https://jitpack.io/#mineinjava/quail)
 +++
 
-<hr/>
+
 ## Via git submodule
 This is recommended teams that wish to contribute to Quail, or if the methods above don't work for you.
 
