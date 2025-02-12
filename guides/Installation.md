@@ -12,7 +12,7 @@ icon: download
 
 +++ 🐘 Gradle
 
-1. Add JitPack to your build file
+1. Add JitPack to your build file (Note: A default project might not have a "repositories" block, just make one)
 
 ```gradle
 repositories {
@@ -61,7 +61,15 @@ Figure it out yourself
 ## Via git submodule
 This is recommended teams that wish to contribute to Quail, or if the methods above don't work for you.
 
-1. Add the submodule
+1. Init the directory
+
+```bash
+git init
+```
+
+-  You might need to create the `repositories/quail` before you init it.
+
+2. Add the submodule
 
 ```bash
 git submodule add https://github.com/Mineinjava/quail.git repositories/quail
@@ -69,18 +77,19 @@ git submodule add https://github.com/Mineinjava/quail.git repositories/quail
 
 - This will clone a copy of Quail into your project at `repositories/quail`.
 
-2.  Symlink the Quail module into your project
+3.  Symlink the Quail module into your project
 
-On Windows:
+On Windows (In Command Prompt):
 
 ```cmd
  cd src\main\java\com\mineinjava
  mklink /D quail ..\..\..\..\..\repositories\quail\quail\src\main\java\com\mineinjava\quail
 ```
 
-You may have to make directories.
+
 
 - This will create a symlink to the Quail module in your project.
+- You may have to make `com/mineinjava/` to cd into.
 
 To update the module:
 ```bash
