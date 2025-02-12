@@ -52,7 +52,7 @@ dependencies {
 ```
 
 +++ ❓ Other
-Figure it out yourself
+Figure it out yourself.
 
 [Here is the jitpack link](https://jitpack.io/#mineinjava/quail)
 +++
